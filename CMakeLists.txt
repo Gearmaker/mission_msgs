@@ -10,11 +10,13 @@ find_package(geometry_msgs REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
+set(msg_files
  "msg/Zone.msg"
  "msg/Task.msg"
  "msg/Mission.msg"
+)
 
+rosidl_generate_interfaces(${PROJECT_NAME} ${msg_files}
  DEPENDENCIES std_msgs geometry_msgs builtin_interfaces
 )
 
